@@ -11,6 +11,13 @@
  问题2:当按home键返回后，再次打开app，
      1）累计得分没有了
      2）背景图片没有了
+ 第二次调试:
+ 之所以没有显示我方飞机图片，是因为我没有添加.CGImage
+ _myPlane.contents = (id)((_count % 2 == 0) ? _planeImage_0 : _planeImage_1);
+ _myPlane.contents = (id)((_count % 2 == 0) ? _planeImage_0.CGImage : _planeImage_1.CGImage);
+ 问题2:
+ 2）背景图片之所以没有，是因为我忘了给背景层赋值
+ 1）累计得分是有的，但是由于背景图片是白色，所以被遮挡
  */
 
 #import <AVFoundation/AVFoundation.h>
@@ -83,7 +90,7 @@
     // 播放背景音效
     [_backgroundMusicPlayer play];
     // 获取要播放爆炸的音频文件的URL
-    NSURL * blastMusicURL = [[NSBundle mainBundle]URLForResource:@"s0" withExtension:@"mp3"];
+    NSURL * blastMusicURL = [[NSBundle mainBundle]URLForResource:@"b0" withExtension:@"mp3"];
     // 加载音效文件
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(blastMusicURL), &_blastSound);
     // 初始化容纳所有敌机、所有子弹、所有爆炸效果的NSMutableArray集合
@@ -167,6 +174,9 @@
     _bulletImage = [UIImage imageNamed:@"plane/bullet"];
     // 初始化背景图片
     _backgroundImage = [UIImage imageNamed:@"plane/bg.jpg"];
+    //: 当转入前台时，没有给背景层赋值
+    _backgroundLayer_01.contents = (id)_backgroundImage.CGImage;
+    _backgroundLayer_02.contents = (id)_backgroundImage.CGImage;
     // 获取背景音效的音频文件的URL
     NSURL * backgroundMusicURL = [[NSBundle mainBundle]URLForResource:@"s3" withExtension:@"wav"];
     // 创建AVAudioPlayer对象
@@ -187,7 +197,9 @@
 }
 -(void)move{
     // 控制飞机的图片交替显示，实现动画效果
-    _myPlane.contents = (id)((_count % 2 == 0) ? _planeImage_0 : _planeImage_1);
+    //: 之所以没有显示我方飞机图片，是因为我没有添加.CGImage
+    //: _myPlane.contents = (id)((_count % 2 == 0) ? _planeImage_0 : _planeImage_1);
+    _myPlane.contents = (id)((_count % 2 == 0) ? _planeImage_0.CGImage : _planeImage_1.CGImage);
     // 控制背景向下移动
     _backgroundLayer_01.frame = CGRectOffset(_backgroundLayer_01.frame, 0, 5);
     _backgroundLayer_02.frame = CGRectOffset(_backgroundLayer_02.frame, 0, 5);
