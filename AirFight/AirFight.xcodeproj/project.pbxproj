@@ -17,6 +17,7 @@
 		99F398731F9A0BBC005786D6 /* plane in Resources */ = {isa = PBXBuildFile; fileRef = 99F398721F9A0BBC005786D6 /* plane */; };
 		99F398761F9A0BDE005786D6 /* s3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 99F398741F9A0BDE005786D6 /* s3.wav */; };
 		99F398771F9A0BDE005786D6 /* b0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 99F398751F9A0BDE005786D6 /* b0.mp3 */; };
+		99F3987A1F9A0CBD005786D6 /* Spirit.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F398791F9A0CBD005786D6 /* Spirit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		99F398721F9A0BBC005786D6 /* plane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = plane; sourceTree = "<group>"; };
 		99F398741F9A0BDE005786D6 /* s3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = s3.wav; sourceTree = "<group>"; };
 		99F398751F9A0BDE005786D6 /* b0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = b0.mp3; sourceTree = "<group>"; };
+		99F398781F9A0CBD005786D6 /* Spirit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spirit.h; sourceTree = "<group>"; };
+		99F398791F9A0CBD005786D6 /* Spirit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Spirit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				99F398721F9A0BBC005786D6 /* plane */,
 				99F398701F9A0BA2005786D6 /* blast */,
 				99F3985A1F9A0B3E005786D6 /* AppDelegate.h */,
+				99F398781F9A0CBD005786D6 /* Spirit.h */,
+				99F398791F9A0CBD005786D6 /* Spirit.m */,
 				99F3985B1F9A0B3E005786D6 /* AppDelegate.m */,
 				99F3985D1F9A0B3E005786D6 /* ViewController.h */,
 				99F3985E1F9A0B3E005786D6 /* ViewController.m */,
@@ -160,6 +165,7 @@
 			files = (
 				99F3985F1F9A0B3E005786D6 /* ViewController.m in Sources */,
 				99F3986A1F9A0B3E005786D6 /* main.m in Sources */,
+				99F3987A1F9A0CBD005786D6 /* Spirit.m in Sources */,
 				99F3985C1F9A0B3E005786D6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
